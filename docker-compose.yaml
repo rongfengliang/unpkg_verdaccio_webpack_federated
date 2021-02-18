@@ -1,0 +1,13 @@
+version: "3"
+services: 
+    unpkg:
+      image: dalongrong/unpkg:http-env
+      environment: 
+      - "NPM_REGISTRY_URL=http://npm-registry:4873"
+      ports: 
+      - "8080:8080"
+    npm-registry:
+      image: verdaccio/verdaccio
+      ports: 
+      - "4873:4873"
+    
